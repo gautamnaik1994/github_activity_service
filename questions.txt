@@ -1,0 +1,23 @@
+# Product related questions
+
+Q1. Is there a limit to how many days prior to today we need to fetch events for?
+The reason I asked because Github events API returns maximum of 300 events and only last 30 days of events. There is also a hard limit of 100 events per page per API call.
+
+Q2. Is JSON output format acceptable, or should the output be written to a file, database, or some other format?
+
+Q3. What is the expected form of common event types? Do i have to include the count or just the event names? Currently I am returning just the event names.
+
+
+
+# Technical questions
+
+Q1. How frequently will be this service called? 
+The reason I ask is because GitHub API has rate limits. 
+
+Q2. Extending above questions, Do i need to focus on consistency or availability?
+The reason I asked is because if we want to focus on availability we can cache the results for a certain time period and serve stale data in case of API rate limits or failures. 
+If we want to focus on consistency we can always fetch fresh data from GitHub API but that might lead to unavailability in case of rate limits or API failures.
+Currently I have implemented a hybrid approach where we fetch fresh data but in case of network issues or rate limits we serve stale cached data if available.
+
+Q3. Currently only caching Github responses, do we need to cache processed results as well?
+The reason I ask is because if the processing logic is heavy or time consuming, caching processed results can help in improving response times for repeated requests for the same user within a short time frame.

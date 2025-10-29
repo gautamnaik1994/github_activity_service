@@ -1,0 +1,14 @@
+FROM python:3.12-slim
+
+WORKDIR /app
+
+COPY requirements.txt .
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY models/ ./models/
+COPY services/ ./services/
+COPY main.py .
+
+
+ENTRYPOINT ["python", "main.py"]
