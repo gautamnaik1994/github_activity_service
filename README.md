@@ -15,7 +15,7 @@ The project is structured as follows:
 
 - `main.py`: The entry point of the application that handles command-line arguments and initiates the activity summary process.
 - `services/github_client.py`: Contains the `GitHubClient` class responsible for interacting with the GitHub API and caching responses.
-- `services/activity_summarizer.py`: Contains `ActivitySummarizer` class that processes the fetched events and generates the summary.
+- `services/activity_analyzer.py`: Contains `ActivityAnalyzer` class that processes the fetched events and generates the summary.
 - `models/`: Directory containing data models used in the application.
 
 ## Technologies Used
