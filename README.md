@@ -32,6 +32,7 @@ The project is structured as follows:
 ```bash
 git clone https://github.com/gautamnaik1994/github_activity_service.git
 cd github_activity_service
+git checkout feature/jira-123
 ```
 
 2. Create and activate a virtual environment optionally:
