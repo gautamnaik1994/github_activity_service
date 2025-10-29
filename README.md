@@ -76,6 +76,6 @@ docker run -p 8000:8000 github_activity_service ge0ffrey
 
 1. Implementing unit tests and integration tests.
 2. Implement Pydantic models for better data validation and serialization.
-3. Adding more detailed error handling, logging, and monitoring.
-4. Implementing more advanced caching strategies with expiration policies.
+3. Adding detailed error handling, logging, and monitoring.
+4. Implementing advanced caching strategies with expiration policies.
 5. Config based approach to set parameters like number of events to fetch, cache location, etc.
