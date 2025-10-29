@@ -1,0 +1,27 @@
+# Choices
+
+1. I have used the default of 30 events per api call.
+The default number of events per API call is 30, with a maximum of 100 events per call. One can specify the number of events to fetch using the `per_page` query parameter, up to a maximum of 100. 
+If events are more than 100, pagination can be used to fetch additional events. But this will require multiple API calls and will be subject to GitHub's rate limiting.
+I have included event types that were related to  commits, pull requests, comments and merges
+
+2. Caching strategy. I have implemented a simple file-based caching mechanism that stores the fetched events in the /tmp directory. This cache is used when there are network issues or API rate limits.
+In the Github Client, I have added an option to allow stale cache data to be returned in case of network issues. This is controlled by the `allow_stale` parameter in the `GitHubClient` constructor.
+This can be extended to use more sophisticated caching mechanisms like Redis or Memcached if needed with TTL based expiration policies.
+
+3. This script could easily be extended into a web service using FastAPI or Flask (exposing GET /github_activity/{username})
+
+4. In Github client, I have  used a session object to reuse HTTP connections for better performance. In current project, the request session is of no use, as the entire code is run once and exits.
+But in a long running service, this will help in reusing connections.
+
+5. Added a simple Dockerfile to containerize the application. This allows for easy deployment and execution in different environments.
+
+
+# Scope for future improvements
+
+1. Implementing unit tests and integration tests.
+2. Implement Pydantic models for better data validation and serialization.
+3. Adding more detailed error handling, logging, and monitoring.
+4. Implementing more advanced caching strategies with expiration policies.
+5. Config based approach to set parameters like number of events to fetch, cache location, etc.
+
