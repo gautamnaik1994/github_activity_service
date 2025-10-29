@@ -17,6 +17,7 @@ The reason I ask is because GitHub API has rate limits.
 Q2. Extending above questions, Do i need to focus on consistency or availability?
 The reason I asked is because if we want to focus on availability we can cache the results for a certain time period and serve stale data in case of API rate limits or failures. 
 If we want to focus on consistency we can always fetch fresh data from GitHub API but that might lead to unavailability in case of rate limits or API failures.
+Currently I have implemented a hybrid approach where we fetch fresh data but in case of network issues or rate limits we serve stale cached data if available.
 
 Q3. Currently only caching Github responses, do we need to cache processed results as well?
 The reason I ask is because if the processing logic is heavy or time consuming, caching processed results can help in improving response times for repeated requests for the same user within a short time frame.
